@@ -19,9 +19,15 @@ class Item:
 
         self.all.append(self)
 
+    def __repr__(self):
+        return f"{self.__class__.__name__}('{self.name}', {self.price}, {self.quantity})"
+
+    def __str__(self):
+        return f"{self.name}"
+
     @property
     def name(self):
-        ''' Геттер приватнного атрибута name'''
+        ''' Геттер приватнного атрибута name '''
         return self.__name
 
     @name.setter
@@ -54,7 +60,6 @@ class Item:
     def string_to_number(number):
         """статический метод, возвращающий число из числа-строки"""
         return int(float(number))
-
 
 
 

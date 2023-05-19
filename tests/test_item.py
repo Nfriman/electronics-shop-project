@@ -5,6 +5,9 @@ def test_item():
     item1 = Item("Смартфон", 10000, 20)
     assert item1.calculate_total_price() == 200000
 
+    assert repr(item1) == "Item('Смартфон', 10000, 20)"
+    assert str(item1) == 'Смартфон'
+
     item1.name = 'комп'
     assert item1.name == 'комп'
 
