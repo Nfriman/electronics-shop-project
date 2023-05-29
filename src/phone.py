@@ -1,4 +1,5 @@
-from item import Item
+from src.item import Item
+
 
 class Phone(Item):
     def __init__(self, name: str, price: float, quantity: int, number_of_sim) -> None:
@@ -7,5 +8,3 @@ class Phone(Item):
 
     def __repr__(self):
         return f"{self.__class__.__name__}('{self.name}', {self.price}, {self.quantity}, {self.number_of_sim})"
-
-
