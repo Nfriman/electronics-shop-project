@@ -23,21 +23,23 @@ class Item:
         return f"{self.__class__.__name__}('{self.name}', {self.price}, {self.quantity})"
 
     def __str__(self):
+        """Выводит имя товара"""
         return f"{self.name}"
 
     def __add__(self, other):
+        """Суммирует цены товаров"""
         return self.quantity + other.quantity
 
     @property
     def name(self):
-        ''' Геттер приватнного атрибута name '''
+        """ Геттер приватнного атрибута name """
         return self.__name
 
     @name.setter
     def name(self, name):
         """ сеттер name проверяет, что длина наименования товара не больше 10 симвовов"""
         if len(name) > 10:
-            raise  Exception("Длина наименования товара превышает 10 символов.")
+            raise Exception("Длина наименования товара превышает 10 символов.")
         self.__name = name
 
     def calculate_total_price(self) -> float:
@@ -47,7 +49,7 @@ class Item:
 
     def apply_discount(self):
         """Применяет установленную скидку для конкретного товара."""
-        self.price = int(self.pay_rate*self.price)
+        self.price = int(self.pay_rate * self.price)
 
     @classmethod
     def instantiate_from_csv(cls):
