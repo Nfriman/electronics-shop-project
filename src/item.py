@@ -12,6 +12,7 @@ class Item:
         :param name: Название товара.
         :param price: Цена за единицу товара.
         :param quantity: Количество товара в магазине."""
+        super().__init__()
         self.pay = None
         self.__name = name
         self.price = price
@@ -65,3 +66,7 @@ class Item:
     def string_to_number(number):
         """статический метод, возвращающий число из числа-строки"""
         return int(float(number))
+
+
+
+
