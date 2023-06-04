@@ -29,7 +29,10 @@ class Item:
 
     def __add__(self, other):
         """Суммирует цены товаров"""
-        return self.quantity + other.quantity
+        if issubclass(self.__class__, Item):
+            return self.quantity + other.quantity
+        else:
+            var = None
 
     @property
     def name(self):
