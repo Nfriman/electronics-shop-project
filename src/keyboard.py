@@ -28,5 +28,4 @@ class KeyBoard(Item, MixinLog):
 
 
 
-kb = KeyBoard('Dark Project KD87A', 9600, 5)
-print(kb.language)
+
