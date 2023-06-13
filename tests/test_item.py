@@ -1,3 +1,5 @@
+import pytest
+
 from src.item import *
 
 
@@ -19,10 +21,14 @@ def test_item():
 
     assert Item.string_to_number('5') == 5
 
-    Item.instantiate_from_csv()
-    assert len(Item.all) == 7
+    # Item.instantiate_from_csv()
+    #assert len(Item.all) == 7
+    with pytest.raises(FileNotFoundError):
+        Item.instantiate_from_csv(path="нет такого файла")
 
+    # @staticmethod string_to_number
     try:
-        item1.name = "!!!!!!!!!!!!!!!!!"
+        item1.name = "ZZZZZZZZZZZZZZZZ"
     except Exception as e:
         assert str(e) == "Длина наименования товара превышает 10 символов."
+

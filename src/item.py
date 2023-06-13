@@ -2,6 +2,7 @@ import csv
 import os
 
 
+
 class InstantiateCSVError(Exception):
     pass
 
@@ -60,11 +61,11 @@ class Item:
         self.price = int(self.pay_rate * self.price)
 
     @classmethod
-    def instantiate_from_csv(cls):
+    def instantiate_from_csv(cls, path):
         """класс-метод, инициализирующий экземпляры класса `Item` данными из файла _src/items.csv_"""
         os.chdir('..')
         try:
-            file_csv = os.path.join("src", "items.csv")
+            file_csv = os.path.join("src", path)
             with open(file_csv, newline='', encoding='utf-8') as csvfile:
                 reader = csv.DictReader(csvfile)
                 try:
@@ -84,7 +85,5 @@ class Item:
     def string_to_number(number):
         """статический метод, возвращающий число из числа-строки"""
         return int(float(number))
-
-
 
 
